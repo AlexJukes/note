@@ -10,7 +10,7 @@
       noteText.push(notes[i].showText());
     }
     return "<ul><li><div>" + noteText.join("</div></li><li><div>") + "</div></li></ul>";
-  }
+  };
 
   exports.NoteListView = NoteListView;
 

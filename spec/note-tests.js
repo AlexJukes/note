@@ -107,4 +107,30 @@ exports.testNoteHasText = testNoteHasText;
   }
 
     exports.testNoteController = testNoteController;
+
 })(this);
+
+
+(function(exports) {
+
+    function testNoteControllerInnerHTML() {
+
+      function NoteListDouble() {}
+
+      function NoteListViewDouble() {
+
+        note: "<ul><li><div>Hey Emily!</div></li></ul>";
+      }
+
+  var noteListDouble = new NoteListDouble();
+  var noteController = new NoteController( NoteListDouble());
+
+  noteController.renderHTML();
+
+  assert.toEqual(noteController.element.innerHTML, "<ul><li><div>Hey Emily!</div></li></ul>");
+
+
+    }
+
+    exports.testNoteControllerInnerHTML = testNoteControllerInnerHTML;
+    })(this);
